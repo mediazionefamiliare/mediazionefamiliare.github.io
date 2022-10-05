@@ -1,0 +1,1711 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,900;1,900&family=Rubik:wght@500&display=swap');
+
+/* Def animations */
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+* {
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    color: gainsboro;
+    text-decoration-color: transparent;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: rgb(255, 152, 62) /*rgb(188, 53, 48)*/
+    ;
+}
+
+body {
+    background-image: url(imgs/WinBG_2.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    background-attachment: fixed;
+}
+
+:root {
+    --top: calc(1.5cm + 1px);
+}
+
+.blur {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #00000025;
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+#navbar {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    height: 1.5cm;
+    width: 100%;
+    background-color: rgb(70, 70, 70);
+    border-bottom: 1px solid rgb(85, 85, 85);
+    box-shadow: 2px 2px 5px #00000050, 3px 3px 10px #00000050;
+    z-index: 10;
+}
+
+.links {
+    position: absolute;
+    text-transform: capitalize;
+    background-color: transparent;
+    top: 0.5cm;
+    left: 2.5%;
+    cursor: pointer;
+    display: flex;
+    z-index: 11;
+}
+
+.chisiamo {
+    color: gainsboro;
+    margin-right: 50px;
+}
+
+    .chisiamo:hover {
+        transition: 150ms;
+        color: white;
+    }
+
+    .chisiamo:not(hover) {
+        transition: 150ms;
+        color: gainsboro;
+    }
+
+.home {
+    color: gainsboro;
+    margin-right: 50px;
+}
+
+    .home:hover {
+        transition: 500ms;
+        color: white;
+    }
+
+    .home:not(hover) {
+        transition: 500ms;
+        color: gainsboro;
+    }
+
+.achierivolto {
+    color: gainsboro;
+    margin-right: 50px;
+}
+
+    .achierivolto:not(hover) {
+        transition: 500ms;
+        color: gainsboro;
+    }
+
+    .achierivolto:hover {
+        transition: 500ms;
+        color: white;
+    }
+
+.crediti {
+    color: gainsboro;
+    margin-right: 50px;
+}
+
+    .crediti:hover {
+        transition: 500ms;
+        color: white;
+    }
+
+    .crediti:not(hover) {
+        transition: 500ms;
+        color: gainsboro;
+    }
+
+.contatti {
+    color: gainsboro;
+    margin-right: 50px;
+}
+
+    .contatti:hover {
+        transition: 500ms;
+        color: white;
+    }
+
+    .contatti:not(hover) {
+        transition: 500ms;
+        color: gainsboro;
+    }
+
+.clmf {
+    color: gainsboro;
+    margin-right: 50px;
+}
+
+    .clmf:not(hover) {
+        transition: 500ms;
+        color: gainsboro;
+    }
+
+    .clmf:hover {
+        transition: 500ms;
+        color: white;
+    }
+
+.title {
+    position: absolute;
+    z-index: 1;
+    font-size: 75px;
+    left: 15%;
+    text-shadow: 2px 2px 5px #00000025, 3px 3px 10px #00000025;
+    width: 70%;
+    color: gainsboro;
+    text-rendering: optimizeSpeed;
+    font-weight: 750;
+    text-align: center;
+    cursor: default;
+    top: 2cm;
+}
+
+.logo {
+    transition: all 250ms;
+    position: absolute;
+    background-image: url(imgs/Logo.png);
+    top: 15.3cm;
+    transform: scale(7) rotateY(0deg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+    left: 45%;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    z-index: 3;
+}
+
+    .logo:hover {
+        transition: all 300ms;
+        transform: scale(6) rotateY(0deg);
+    }
+
+.scrolltotop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    height: 75px;
+    width: 75px;
+    transform: scale(1);
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(imgs/ScrollToTop.png);
+    background-size: contain;
+    z-index: 20;
+}
+
+    .scrolltotop:hover {
+        transition: all 250ms;
+        transform: scale(1.5);
+    }
+
+    .scrolltotop:active {
+        transition: all 250ms;
+        transform: scale(.75);
+    }
+
+    .scrolltotop:not(hover) {
+        transition: all 250ms;
+        transform: scale(1);
+    }
+
+#scrollpath {
+    position: fixed;
+    background-color: rgb(65, 65, 65);
+    height: .5cm;
+    top: var(--top);
+    width: 100cm;
+    z-index: 11;
+}
+
+.js {
+    display: none;
+}
+
+#scrollbar {
+    position: fixed;
+    height: .5cm;
+    width: 80%;
+    left: 10%;
+    top: var(--top);
+    z-index: 12;
+}
+
+    #scrollbar::before {
+        content: "";
+        position: absolute;
+        height: .5cm;
+        width: 100%;
+        top: 0;
+        background-color: rgb(255, 152, 62);
+        z-index: 13;
+    }
+
+    #scrollbar::after {
+        content: "";
+        position: absolute;
+        height: .5cm;
+        width: 100%;
+        top: 0;
+        background-color: rgb(255, 152, 62);
+        filter: blur(7.5px);
+        z-index: 13;
+    }
+
+.divider {
+    position: absolute;
+    height: 10px;
+    width: 70%;
+    left: 15%;
+    background-color: rgb(200, 200, 200);
+    border-radius: 2px;
+    filter: none;
+    top: 17.5cm;
+    z-index: 3;
+}
+
+.bg1 {
+    position: absolute;
+    height: 45%;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    top: 18cm;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .35);
+}
+
+.figure1 {
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: gainsboro;
+    height: 50px;
+    width: 50px;
+    left: 1%;
+    top: 29.75cm;
+    overflow: visible;
+    z-index: 1;
+}
+
+.line1 {
+    position: absolute;
+    background-color: gainsboro;
+    height: 10px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    left: 5%;
+    top: 30.275cm;
+    width: 90%;
+    z-index: 1;
+}
+
+.bg2 {
+    position: absolute;
+    height: 45%;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    top: 32cm;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .35);
+}
+
+.contattaci {
+    position: absolute;
+    text-transform: capitalize;
+    left: 1%;
+    font-weight: 750;
+    font-size: 50px;
+    padding-right: 20%;
+    cursor: default;
+    padding-top: 2%;
+    border-bottom: 10px solid rgb(200, 200, 200);
+    z-index: 3;
+}
+
+.contttxt {
+    position: absolute;
+    left: 1%;
+    cursor: default;
+    font-weight: 800;
+    font-size: x-large;
+    top: 3cm;
+    color: rgb(199, 199, 199);
+    padding-right: 10%;
+    padding-top: 2%;
+    z-index: 3;
+}
+
+#cosasotto {
+    position: absolute;
+    bottom: -300%;
+    left: 0%;
+    height: 30%;
+    width: 100%;
+    background-color: #bb492c;
+    z-index: 2;
+}
+
+.contattacidove {
+    position: absolute;
+    color: gainsboro;
+    cursor: pointer;
+    font-weight: auto;
+    font-size: large;
+    top: 5cm;
+}
+
+.uozzap {
+    margin-bottom: 5px;
+}
+
+.email {
+    margin-bottom: 5px;
+}
+
+.feisbuc {
+    margin-bottom: 5px;
+}
+
+.uozzap:hover {
+    transition: 250ms;
+    color: white;
+    cursor: pointer;
+}
+
+.email:hover {
+    transition: 250ms;
+    color: white;
+    cursor: pointer;
+}
+
+.feisbuc:hover {
+    transition: 250ms;
+    color: white;
+    cursor: pointer;
+}
+
+.uozzap:not(hover) {
+    transition: 250ms;
+    color: gainsboro;
+    cursor: pointer;
+}
+
+.email:not(hover) {
+    transition: 250ms;
+    color: gainsboro;
+    cursor: pointer;
+}
+
+.feisbuc:not(hover) {
+    transition: 250ms;
+    color: gainsboro;
+    cursor: pointer;
+}
+
+.cmail {
+    position: absolute;
+    margin: 20px;
+    cursor: default;
+}
+
+.mmail:hover {
+    transition: all 250ms;
+    cursor: pointer;
+    color: white;
+}
+
+.mmail:not(hover) {
+    transition: all 250ms;
+    color: gainsboro;
+}
+
+.coprigh {
+    position: absolute;
+}
+
+.margin {
+    position: absolute;
+    left: 1%;
+}
+
+.bg3 {
+    position: absolute;
+    height: 45%;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    top: 46cm;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .35);
+}
+
+.figure2 {
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: gainsboro;
+    height: 50px;
+    width: 50px;
+    left: 1%;
+    top: 43.75cm;
+    overflow: visible;
+    z-index: 1;
+}
+
+.line2 {
+    position: absolute;
+    background-color: gainsboro;
+    height: 10px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    left: 5%;
+    top: 44.275cm;
+    width: 90%;
+    z-index: 1;
+}
+
+.bg4 {
+    position: absolute;
+    height: 45%;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    top: 60cm;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .35);
+}
+
+.figure3 {
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: gainsboro;
+    height: 50px;
+    width: 50px;
+    left: 1%;
+    top: 57.75cm;
+    overflow: visible;
+    z-index: 1;
+}
+
+.line3 {
+    position: absolute;
+    background-color: gainsboro;
+    height: 10px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    left: 5%;
+    top: 58.275cm;
+    width: 90%;
+    z-index: 1;
+}
+
+.bg5 {
+    position: absolute;
+    height: 45%;
+    backdrop-filter: blur(15px);
+    width: 100%;
+    top: 74cm;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, .35);
+}
+
+.figure4 {
+    position: absolute;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: gainsboro;
+    height: 50px;
+    width: 50px;
+    left: 1%;
+    top: 71.75cm;
+    overflow: visible;
+    z-index: 1;
+}
+
+.line4 {
+    position: absolute;
+    background-color: gainsboro;
+    height: 10px;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    left: 5%;
+    top: 72.275cm;
+    width: 90%;
+    z-index: 1;
+}
+
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/* Portrait Phone */
+@media only screen and (max-width:700px) and (min-height:700px) and (max-height:1300px) {
+    .js {
+        display: flex;
+    }
+
+    .tmlinks {
+        transform: scale(0);
+    }
+
+    .title {
+        font-size: 35px;
+        width: 90%;
+        top: 5%;
+        left: 5%;
+    }
+
+    .contattaci {
+        font-size: 25px;
+    }
+
+    .divider1 {
+        display: none;
+    }
+
+    line1 {
+        display: none;
+    }
+
+    figure1 {
+        display: none;
+    }
+
+    line2 {
+        display: none;
+    }
+
+    figure2 {
+        display: none;
+    }
+
+    line3 {
+        display: none;
+    }
+
+    figure3 {
+        display: none;
+    }
+
+    line4 {
+        display: none;
+    }
+
+    figure4 {
+        display: none;
+    }
+
+    line5 {
+        display: none;
+    }
+
+    figure5 {
+        display: none;
+    }
+
+    .bg1 {
+        height: 30%;
+    }
+
+    .bg2 {
+        top: 27.5cm;
+    }
+
+    .bg3 {
+        top: 42.5cm;
+    }
+
+    .bg4 {
+        top: 55.5cm;
+    }
+
+    .bg5 {
+        top: 69.5cm;
+    }
+
+    .contttxt {
+        font-size: 13px;
+        width: 95%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .logo {
+        transform: scale(4);
+        top: 15.6cm;
+        left: 35%;
+    }
+
+        .logo:hover {
+            transform: scale(4);
+        }
+
+    .sovrapposizione {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: #00000090;
+        opacity: 0;
+        z-index: 21
+    }
+
+    .activesovrapposizione {
+        transition: all 200ms;
+        opacity: 1;
+    }
+
+    .tendinamenubtn {
+        position: fixed;
+        opacity: 1;
+        cursor: pointer;
+        visibility: visible;
+        display: flex;
+        height: 50px;
+        width: 50px;
+        background-color: #00000025;
+        background-image: url(imgs/TendinaMenu.png);
+        background-size: contain;
+        z-index: 25;
+    }
+
+    .tmbk {
+        position: fixed;
+        height: 100%;
+        width: 0%;
+        background-color: #3b3b3b;
+        z-index: 22;
+    }
+
+    .tmexitbtn {
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        background-color: rgb(65, 65, 65);
+        background-image: url(imgs/ExitMenu.png);
+        background-size: contain;
+        width: 0%;
+        z-index: 23;
+    }
+
+        .tmexitbtn:hover {
+            transition: all 200ms;
+            background-color: rgb(75,75,75);
+            cursor: pointer;
+        }
+
+        .tmexitbtn:active {
+            transition: all 200ms;
+            background-color: rgb(85,85,85);
+            cursor: pointer;
+        }
+
+        .tmexitbtn:not(hover) {
+            transition: all 200ms;
+            background-color: rgb(65, 65, 65);
+        }
+
+    .activatetmexitbtn {
+        transition: 250ms;
+        cursor: pointer;
+        width: 0%;
+    }
+
+    .activetendinamenu {
+        transition: 250ms;
+        transform: scale(1);
+    }
+
+    .tmlinks {
+        position: fixed;
+        z-index: 24;
+        color: gainsboro;
+    }
+
+    .tmchisiamo {
+        position: absolute;
+        width: 125%;
+        text-transform: capitalize;
+        height: auto;
+        padding: 10%;
+        font-size: xx-large;
+        text-align: center;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmchisiamo:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcrediti {
+        position: absolute;
+        width: 125%;
+        height: auto;
+        padding: 2%;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmcrediti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmhome {
+        position: absolute;
+        padding: 10%;
+        text-transform: capitalize;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmhome:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmachierivolto {
+        position: absolute;
+        text-transform: capitalize;
+        padding: 10%;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmachierivolto:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcontatti {
+        position: absolute;
+        width: 125%;
+        height: auto;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+        .tmcontatti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+}
+
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/* Landscape phone */
+@media only screen and (max-height:700px) and (min-width:700px) and (max-width:1300px) {
+    .js {
+        display: flex;
+    }
+
+    .tmlinks {
+        transform: scale(0);
+    }
+
+    .title {
+        font-size: 35px;
+        width: 90%;
+        top: 5%;
+        left: 5%;
+    }
+
+    .contattaci {
+        font-size: 25px;
+    }
+
+    .divider1 {
+        display: none;
+    }
+
+    line1 {
+        display: none;
+    }
+
+    figure1 {
+        display: none;
+    }
+
+    line2 {
+        display: none;
+    }
+
+    figure2 {
+        display: none;
+    }
+
+    line3 {
+        display: none;
+    }
+
+    figure3 {
+        display: none;
+    }
+
+    line4 {
+        display: none;
+    }
+
+    figure4 {
+        display: none;
+    }
+
+    line5 {
+        display: none;
+    }
+
+    figure5 {
+        display: none;
+    }
+
+
+    .bg2 {
+        top: 27.5cm;
+    }
+
+    .bg3 {
+        top: 42.5cm;
+    }
+
+    .bg4 {
+        top: 55.5cm;
+    }
+
+    .bg5 {
+        top: 69.5cm;
+    }
+
+    .contttxt {
+        font-size: 13px;
+        width: 95%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .logo {
+        transform: scale(4);
+        top: 15.6cm;
+        left: 35%;
+    }
+
+        .logo:hover {
+            transform: scale(4);
+        }
+
+    .sovrapposizione {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: #00000090;
+        opacity: 0;
+        z-index: 21
+    }
+
+    .activesovrapposizione {
+        transition: all 200ms;
+        opacity: 1;
+    }
+
+    .tendinamenubtn {
+        position: fixed;
+        opacity: 1;
+        cursor: pointer;
+        visibility: visible;
+        display: flex;
+        height: 50px;
+        width: 50px;
+        background-color: #00000025;
+        background-image: url(imgs/TendinaMenu.png);
+        background-size: contain;
+        z-index: 25;
+    }
+
+    .tmbk {
+        position: fixed;
+        height: 100%;
+        width: 0%;
+        background-color: #3b3b3b;
+        z-index: 22;
+    }
+
+    .tmexitbtn {
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        background-color: rgb(65, 65, 65);
+        background-image: url(imgs/ExitMenu.png);
+        background-size: contain;
+        width: 0%;
+        z-index: 23;
+    }
+
+        .tmexitbtn:hover {
+            transition: all 200ms;
+            background-color: rgb(75,75,75);
+            cursor: pointer;
+        }
+
+        .tmexitbtn:active {
+            transition: all 200ms;
+            background-color: rgb(85,85,85);
+            cursor: pointer;
+        }
+
+        .tmexitbtn:not(hover) {
+            transition: all 200ms;
+            background-color: rgb(65, 65, 65);
+        }
+
+    .activatetmexitbtn {
+        transition: 250ms;
+        cursor: pointer;
+        width: 0%;
+    }
+
+    .activetendinamenu {
+        transition: 250ms;
+        transform: scale(1);
+    }
+
+    .tmlinks {
+        position: fixed;
+        z-index: 24;
+        color: gainsboro;
+    }
+
+    .tmchisiamo {
+        position: absolute;
+        width: 125%;
+        text-transform: capitalize;
+        height: auto;
+        padding: 10%;
+        font-size: xx-large;
+        text-align: center;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmchisiamo:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcrediti {
+        position: absolute;
+        width: 125%;
+        height: auto;
+        padding: 2%;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmcrediti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmhome {
+        position: absolute;
+        padding: 10%;
+        text-transform: capitalize;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmhome:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmachierivolto {
+        position: absolute;
+        text-transform: capitalize;
+        padding: 10%;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmachierivolto:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcontatti {
+        position: absolute;
+        width: 125%;
+        height: auto;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+        .tmcontatti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+}
+
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/* Portrait tablet */
+@media only screen and (min-width:701px) and (max-width:1200px) and (max-height:1200px) and (min-height:750px) {
+    .js {
+        display: flex;
+    }
+
+    .tmlinks {
+        transform: scale(0);
+    }
+
+    .title {
+        font-size: 35px;
+        width: 90%;
+        top: 5%;
+        left: 5%;
+    }
+
+    .contattaci {
+        font-size: 25px;
+    }
+
+    .divider1 {
+        display: none;
+    }
+
+    .line1 {
+        display: none;
+    }
+
+    .figure1 {
+        display: none;
+    }
+
+    .line2 {
+        display: none;
+    }
+
+    .figure2 {
+        display: none;
+    }
+
+    .line3 {
+        display: none;
+    }
+
+    .figure3 {
+        display: none;
+    }
+
+   .line4 {
+        display: none;
+    }
+
+    .figure4 {
+        display: none;
+    }
+
+    .line5 {
+        display: none;
+    }
+
+    .figure5 {
+        display: none;
+    }
+
+    .bg1 {
+        height: 17.5%;
+    }
+
+    .bg2 {
+        top: 23cm;
+        height: 17.5%;
+    }
+
+    .bg3 {
+        top: 28cm;
+        height: 17.5%;
+    }
+
+    .bg4 {
+        top: 33cm;
+        height: 17.5%;
+    }
+
+    .bg5 {
+        top: 38cm;
+        height: 17.5%;
+    }
+
+    #cosasotto{
+        bottom:-150%;
+    }
+
+    .contttxt {
+        font-size: 13px;
+        width: 95%;
+        top: 1.25cm;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .logo {
+        transform: scale(5.5);
+        top: 15.3cm;
+        left: 42.5%;
+    }
+
+        .logo:hover {
+            transform: scale(5.5);
+        }
+
+    .sovrapposizione {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        display:none;
+        background-color: #00000090;
+        opacity: 0;
+        z-index: 21
+    }
+
+    .activesovrapposizione {
+        transition: all 200ms;
+        display:flex;
+        opacity: 1;
+    }
+
+    .tendinamenubtn {
+        position: fixed;
+        opacity: 1;
+        cursor: pointer;
+        visibility: visible;
+        display: flex;
+        height: 50px;
+        width: 50px;
+        background-color: #00000025;
+        background-image: url(imgs/TendinaMenu.png);
+        background-size: contain;
+        z-index: 20;
+    }
+    .tmlinks {
+        position:fixed;
+        z-index: 24;
+        color: gainsboro;
+    }
+
+    .activetendinamenu {
+        transition: 200ms;
+        transform: scale(1);
+    }
+
+
+
+    .tmchisiamo {
+        position:absolute;
+        width: 125%;
+        text-transform: capitalize;
+        height: auto;
+        padding: 10%;
+        font-size: xx-large;
+        text-align: center;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmchisiamo:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcrediti {
+        position:absolute;
+        width: 125%;
+        height: auto;
+        padding: 2%;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmcrediti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmhome {
+        position:absolute;
+        padding: 10%;
+        text-transform: capitalize;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmhome:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmachierivolto {
+        position:absolute;
+        text-transform: capitalize;
+        padding: 10%;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmachierivolto:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcontatti {
+        position:absolute;
+        width: 125%;
+        height: auto;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+        .tmcontatti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+    .tmclmf {
+       position: relative;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+    
+    
+            .tmclmf:active {
+                transition: all 250ms;
+                background-color: rgb(75,75,75);
+                color: white;
+            }
+}
+
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/*********************************************************************************************/
+/* Landscape tablet */
+@media only screen and (min-height:700px) and (max-height:1500px) and (min-width:1000px) and (max-width:1500px) {
+    .js {
+        display: flex;
+    }
+
+    .tmlinks {
+        transform: scale(0);
+    }
+
+    .title {
+        font-size: 35px;
+        width: 90%;
+        top: 5%;
+        left: 5%;
+    }
+
+    .contattaci {
+        font-size: 25px;
+    }
+
+    .divider1 {
+        display: none;
+    }
+
+    line1 {
+        display: none;
+    }
+
+    figure1 {
+        display: none;
+    }
+
+    line2 {
+        display: none;
+    }
+
+    figure2 {
+        display: none;
+    }
+
+    line3 {
+        display: none;
+    }
+
+    figure3 {
+        display: none;
+    }
+
+    line4 {
+        display: none;
+    }
+
+    figure4 {
+        display: none;
+    }
+
+    line5 {
+        display: none;
+    }
+
+    figure5 {
+        display: none;
+    }
+
+    .bg1 {
+        height: 30%;
+    }
+
+    .bg2 {
+        top: 27.5cm;
+    }
+
+    .bg3 {
+        top: 42.5cm;
+    }
+
+    .bg4 {
+        top: 55.5cm;
+    }
+
+    .bg5 {
+        top: 69.5cm;
+    }
+
+    .contttxt {
+        font-size: 13px;
+        width: 95%;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .logo {
+        transform: scale(4);
+        top: 15.6cm;
+        left: 35%;
+    }
+
+        .logo:hover {
+            transform: scale(4);
+        }
+
+    .sovrapposizione {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background-color: #00000090;
+        opacity: 0;
+        z-index: 21
+    }
+
+    .activesovrapposizione {
+        transition: all 200ms;
+        opacity: 1;
+    }
+
+    .tendinamenubtn {
+        position: fixed;
+        opacity: 1;
+        cursor: pointer;
+        visibility: visible;
+        display: flex;
+        height: 50px;
+        width: 50px;
+        background-color: #00000025;
+        background-image: url(imgs/TendinaMenu.png);
+        background-size: contain;
+        z-index: 25;
+    }
+
+    .tmbk {
+        position: fixed;
+        height: 100%;
+        width: 0%;
+        background-color: #3b3b3b;
+        z-index: 22;
+    }
+
+    .tmexitbtn {
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        background-color: rgb(65, 65, 65);
+        background-image: url(imgs/ExitMenu.png);
+        background-size: contain;
+        width: 0%;
+        z-index: 23;
+    }
+
+        .tmexitbtn:hover {
+            transition: all 200ms;
+            background-color: rgb(75,75,75);
+            cursor: pointer;
+        }
+
+        .tmexitbtn:active {
+            transition: all 200ms;
+            background-color: rgb(85,85,85);
+            cursor: pointer;
+        }
+
+        .tmexitbtn:not(hover) {
+            transition: all 200ms;
+            background-color: rgb(65, 65, 65);
+        }
+
+    .activatetmexitbtn {
+        transition: 250ms;
+        cursor: pointer;
+        width: 0%;
+    }
+
+    .activetendinamenu {
+        transition: 250ms;
+        transform: scale(1);
+    }
+
+    .tmlinks {
+        position: fixed;
+        z-index: 24;
+        color: gainsboro;
+    }
+
+    .tmchisiamo {
+        position: absolute;
+        width: 125%;
+        text-transform: capitalize;
+        height: auto;
+        padding: 10%;
+        font-size: xx-large;
+        text-align: center;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmchisiamo:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcrediti {
+        position: absolute;
+        width: 125%;
+        height: auto;
+        padding: 2%;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmcrediti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmhome {
+        position: absolute;
+        padding: 10%;
+        text-transform: capitalize;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+        .tmhome:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmachierivolto {
+        position: absolute;
+        text-transform: capitalize;
+        padding: 10%;
+        width: 125%;
+        height: auto;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+
+        .tmachierivolto:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+
+
+    .tmcontatti {
+        position: absolute;
+        width: 125%;
+        height: auto;
+        padding: 10%;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: xx-large;
+        background-color: rgb(65, 65, 65);
+    }
+
+
+        .tmcontatti:active {
+            transition: all 250ms;
+            background-color: rgb(75,75,75);
+            color: white;
+        }
+
+}
